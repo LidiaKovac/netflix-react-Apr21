@@ -1,11 +1,11 @@
 import { Component } from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NetflixLogo from "../assets/netflix_logo.png";
 import Avatar from "../assets/avatar.png"
 import "../styles.css";
-import {AiOutlineSearch} from "react-icons/ai"
-import {IoIosNotifications} from "react-icons/io"
+import { AiOutlineSearch } from "react-icons/ai"
+import { IoIosNotifications } from "react-icons/io"
 
 class CustomNavbar extends Component {
   render() {
@@ -13,7 +13,7 @@ class CustomNavbar extends Component {
       <Navbar collapseOnSelect expand="lg">
         {/* <Container > */}
         <Navbar.Brand>
-          <img src={NetflixLogo} id="logo" />
+          <img src={NetflixLogo} id="logo" alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,10 +25,10 @@ class CustomNavbar extends Component {
             <Nav.Link>My list</Nav.Link>
           </Nav>
           <Nav id="interaction">
-          <AiOutlineSearch/>
-          <Nav.Link className='nav-link-c'>KIDS</Nav.Link>
-          <IoIosNotifications/>
-          <NavDropdown title={<img src={Avatar} id='avatar'/>} id="collasible-nav-dropdown">
+            <AiOutlineSearch />
+            <Nav.Link className='nav-link-c'>KIDS</Nav.Link>
+            <IoIosNotifications />
+            <NavDropdown title={<img src={Avatar} id='avatar' alt="avatar" />} id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action

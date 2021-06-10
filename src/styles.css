@@ -192,3 +192,7 @@ svg.icon {
     border: none;
     border-radius: 10px;
 }
+
+.car-c.carousel.slide a {
+    margin-right: 0%;
+  }

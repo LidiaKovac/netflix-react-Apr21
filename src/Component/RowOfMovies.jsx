@@ -22,25 +22,25 @@ class RowOfMovies extends React.Component {
   };
   render() {
     return (
-        <>
-       <h2>{this.props.title}</h2>
-      <Carousel className="car-c" indicators={false}>
-        <Carousel.Item>
-          {this.state.movies.Search &&
-            this.state.movies.Search.slice(0, 6).map((movie) => (
-              <SingleMovie img={movie.Poster} title={movie.Title} id={movie.imdbID} />
-            ))}
-        </Carousel.Item>
-        <Carousel.Item>
-          {this.state.movies.Search &&
-            this.state.movies.Search.slice(4, 10).map((movie) => {
-                console.log(movie.Title || "title not found" , movie.imdbID || "id not found")
-               return  <SingleMovie img={movie.Poster} title={movie.Title} id={movie.imdbID}/>
-            }
-            )}
-        </Carousel.Item>
-        
-      </Carousel>
+      <>
+        <h2>{this.props.title}</h2>
+        <Carousel className="car-c" indicators={false}>
+          <Carousel.Item>
+            {this.state.movies.Search &&
+              this.state.movies.Search.slice(0, 6).map((movie) => (
+                <SingleMovie key={movie.imdbID} img={movie.Poster} title={movie.Title} id={movie.imdbID} />
+              ))}
+          </Carousel.Item>
+          <Carousel.Item>
+            {this.state.movies.Search &&
+              this.state.movies.Search.slice(4, 10).map((movie, i) => {
+                console.log(movie.Title || "title not found", movie.imdbID || "id not found")
+                return <SingleMovie key={movie.imdbID} img={movie.Poster} title={movie.Title} id={movie.imdbID} />
+              }
+              )}
+          </Carousel.Item>
+
+        </Carousel>
       </>
     );
   }
